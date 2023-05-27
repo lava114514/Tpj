@@ -1,0 +1,14 @@
+name: Tpj
+version: '${project.version}'
+main: enderlava.tpj.Tpj
+api-version: 1.19
+authors: [ Enderlava ]
+description: An player tp plugin
+website: https://github.com/lava114514/Tpj
+
+commands:
+  tpj:
+    description: Player tp plugin by Enderlava
+    usage: /<command>
+    permission: <plugin name>.commands.tpj
+    permission-message: 你没有权限
