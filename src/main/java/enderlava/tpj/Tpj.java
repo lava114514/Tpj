@@ -28,12 +28,12 @@ public class Tpj extends JavaPlugin {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (label.equalsIgnoreCase("tpj")) {
             if (!(sender instanceof Player)) {
-                sender.sendMessage("该命令只能由玩家执行！");
+                sender.sendMessage("&b该命令只能由玩家执行！");
                 return true;
             }
 
             if (args.length == 0) {
-                sender.sendMessage("用法: /tpj <玩家名>");
+                sender.sendMessage("&b用法: /tpj <玩家名>");
                 return true;
             }
 
@@ -41,20 +41,20 @@ public class Tpj extends JavaPlugin {
             Player target = getServer().getPlayer(args[0]);
 
             if (target == null) {
-                sender.sendMessage("找不到指定的玩家！");
+                sender.sendMessage("&b找不到指定的玩家！");
                 return true;
             }
 
             teleportRequests.put(target, player);
-            sender.sendMessage("传送请求已发送给玩家 " + target.getName() + "，请等待对方的回应！");
-            target.sendMessage("玩家 " + player.getName() + " 请求传送到你的位置。同意请使用命令: /tpjaccept");
+            sender.sendMessage("&b传送请求已发送给玩家 " + target.getName() + "，&b请等待对方的回应！");
+            target.sendMessage("&b玩家 " + player.getName() + " &b请求传送到你的位置。同意请使用命令: /tpjaccept");
 
             return true;
         }
 
         if (label.equalsIgnoreCase("tpjaccept")) {
             if (!(sender instanceof Player)) {
-                sender.sendMessage("该命令只能由玩家执行！");
+                sender.sendMessage("&b该命令只能由玩家执行！");
                 return true;
             }
 
@@ -62,16 +62,21 @@ public class Tpj extends JavaPlugin {
             Player requester = teleportRequests.get(target);
 
             if (requester == null) {
-                sender.sendMessage("没有待处理的传送请求！");
+                sender.sendMessage("&b没有待处理的传送请求！");
                 return true;
             }
 
             requester.teleport(target.getLocation());
-            requester.sendMessage("你已经传送到了玩家 " + target.getName() + " 的位置！");
+            requester.sendMessage("&b你已经传送到了玩家 " + target.getName() + " &b的位置！");
             teleportRequests.remove(target);
             return true;
         }
-
+        if (label.equalsIgnoreCase("tpjaccept"))
+        {
+            sender.sendMessage("&bJ志坤tp");
+            sender.sendMessage("&bBy Enerlava");
+            sender.sendMessage("&bv1.0");
+        }
         return false;
     }
 }

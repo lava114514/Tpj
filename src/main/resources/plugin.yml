@@ -8,12 +8,11 @@ website: https://github.com/lava114514/Tpj
 
 commands:
   tpj:
-    description: Player tp plugin by Enderlava
-    usage: /<command>
-    permission: <plugin name>.commands.tpj
-    permission-message: 你没有权限
+    description: Teleport between players
+    usage: /tpj <player>
   tpjaccept:
-    description: Player tp plugin by Enderlava
-    usage: /<command>
-    permission: <plugin name>.commands.tpj
-    permission-message: 你没有权限
+    description: Accept teleport request
+    usage: /tpjaccept
+  tpjhelp:
+    description: tpj description
+    usage: /tpjhelp
