@@ -13,6 +13,7 @@ commands:
   tpjaccept:
     description: Accept teleport request
     usage: /tpjaccept
+    aliases: [y,tpyes]
   tpjhelp:
     description: tpj description
     usage: /tpjhelp
