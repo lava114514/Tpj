@@ -53,12 +53,12 @@ public class Tpj extends JavaPlugin {
 
             teleportRequests.put(target, player);
             sender.sendMessage(ChatColor.AQUA +"传送请求已发送给玩家 " + target.getName() + "，请等待对方的回应！");
-            target.sendMessage(ChatColor.AQUA +"玩家 " + player.getName() + " 请求传送到你的位置。同意请使用命令: /tpjaccept");
+            target.sendMessage(ChatColor.AQUA +"玩家 " + player.getName() + " 请求传送到你的位置。同意请使用命令: /tpjaccept 或 /y");
 
             return true;
         }
 
-        if (label.equalsIgnoreCase("tpjaccept")) {
+        if (label.equalsIgnoreCase("tpjaccept")||label.equalsIgnoreCase("y")||label.equalsIgnoreCase("tpyes")) {
             if (!(sender instanceof Player)) {
                 sender.sendMessage(ChatColor.AQUA +"该命令只能由玩家执行！");
                 return true;
