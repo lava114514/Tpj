@@ -84,6 +84,7 @@ public class Tpj extends JavaPlugin {
             sender.sendMessage(ChatColor.AQUA + "=== TPJ 插件帮助 ===");
             sender.sendMessage(ChatColor.YELLOW + "/tpj <玩家名> - 发送传送请求给指定玩家");
             sender.sendMessage(ChatColor.YELLOW + "/tpjaccept - 接受传送请求");
+            sender.sendMessage(ChatColor.YELLOW + "/tpt <x> <y> <z> - 传送到指定坐标");
             return true;
         }
 
@@ -99,7 +100,7 @@ public class Tpj extends JavaPlugin {
                 return true;
             }
             target.teleport(new Location(target.getWorld(), Double.parseDouble(args[0]),Double.parseDouble(args[1]),Double.parseDouble(args[2])));
-            sender.sendMessage(ChatColor.AQUA +"成功传送到"+args[0]+args[1]+args[2]);
+            sender.sendMessage(ChatColor.AQUA +"成功传送到"+args[0]+" "+args[1]+" "+args[2]);
             return true;
         }
         return false;
