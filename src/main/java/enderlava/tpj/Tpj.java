@@ -95,12 +95,13 @@ public class Tpj extends JavaPlugin {
                 return true;
             }
 
-            if (args.length == 0) {
+            if (args.length <= 2) {
                 sender.sendMessage(ChatColor.AQUA +"用法: /tpt <x> <y> <z>");
                 return true;
             }
             target.teleport(new Location(target.getWorld(), Double.parseDouble(args[0]),Double.parseDouble(args[1]),Double.parseDouble(args[2])));
             sender.sendMessage(ChatColor.AQUA +"成功传送到"+args[0]+" "+args[1]+" "+args[2]);
+            target.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 3 * 20, 5));
             return true;
         }
         return false;
