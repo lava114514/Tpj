@@ -17,3 +17,6 @@ commands:
   tpjhelp:
     description: tpj description
     usage: /tpjhelp
+  tpt:
+    description: Teleport to a location
+    usage: /tpt <x> <y> <z>

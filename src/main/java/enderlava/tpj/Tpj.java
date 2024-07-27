@@ -1,6 +1,7 @@
 package enderlava.tpj;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -86,6 +87,21 @@ public class Tpj extends JavaPlugin {
             return true;
         }
 
+        if (label.equalsIgnoreCase("tpt")) {
+            Player target = (Player) sender;
+            if (!(sender instanceof Player)) {
+                sender.sendMessage(ChatColor.AQUA +"该命令只能由玩家执行！");
+                return true;
+            }
+
+            if (args.length == 0) {
+                sender.sendMessage(ChatColor.AQUA +"用法: /tpt <x> <y> <z>");
+                return true;
+            }
+            target.teleport(new Location(target.getWorld(), Double.parseDouble(args[0]),Double.parseDouble(args[1]),Double.parseDouble(args[2])));
+            sender.sendMessage(ChatColor.AQUA +"成功传送到"+args[0]+args[1]+args[2]);
+            return true;
+        }
         return false;
     }
 }
